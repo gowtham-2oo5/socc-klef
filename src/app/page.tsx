@@ -3,10 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, BookOpen, Users, Menu } from "lucide-react";
-import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-
+import Image from "next/image";
 export default function Component() {
   const SkillIcon = ({
     skill,
@@ -94,8 +93,6 @@ export default function Component() {
 
     return () => clearTimeout(timer);
   }, []);
-
-  const navItems = ["Home", "About", "Team", "Gallery", "Events"];
 
   return (
     <div className="h-screen bg-gray-100 text-gray-800 flex flex-col transition-colors duration-700 ease-in-out">
