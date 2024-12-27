@@ -1,18 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import {
-  Code2,
-  Brain,
-  Users,
-  ChevronRight,
-  Terminal,
-  Sparkles,
-} from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Brain, Code2, Sparkles, Terminal, Users } from "lucide-react";
+import { useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
   const containerRef = useRef<HTMLDivElement>(null);

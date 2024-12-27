@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image"; // Import Image component
 
 export default function OpeningAnimation() {
   const [icons, setIcons] = useState<{ skill: string; x: number; y: number }[]>(
@@ -72,7 +73,7 @@ export default function OpeningAnimation() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="bg-gray-800 p-4 rounded-lg shadow-md"
             >
-              <img
+              <Image
                 src="/SOCC-LOGO.jpg"
                 width={150}
                 height={150}
@@ -118,9 +119,11 @@ export default function OpeningAnimation() {
                   stiffness: 50,
                 }}
               >
-                <img
+                <Image
                   src={getImageSrc(icon.skill)}
                   alt={`${icon.skill} icon`}
+                  width={48}
+                  height={48}
                   className="w-12 h-12"
                 />
               </motion.div>
