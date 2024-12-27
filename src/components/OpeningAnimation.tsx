@@ -119,7 +119,7 @@ export default function OpeningAnimation() {
                   stiffness: 50,
                 }}
               >
-                <Image
+                <img
                   src={getImageSrc(icon.skill)}
                   alt={`${icon.skill} icon`}
                   width={48}
