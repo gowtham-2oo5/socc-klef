@@ -95,7 +95,7 @@ const About = () => {
             >
               <Terminal className="w-4 h-4" />
               <code className="font-mono text-sm">
-                Society of Competitive Coders
+                School of Competetive Coding
               </code>
               <Sparkles className="w-4 h-4" />
             </motion.div>

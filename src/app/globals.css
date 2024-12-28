@@ -134,3 +134,19 @@ html {
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+}
+
+.bg-grid-small-blue {
+  background-size: 40px 40px;
+  background-image: linear-gradient(
+      to right,
+      rgb(var(--primary) / 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(var(--primary) / 0.1) 1px, transparent 1px);
+}

@@ -81,11 +81,12 @@ export default function OpeningAnimation() {
                 style={{ borderRadius: "20px" }}
               />
             </motion.div>
+
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="text-4xl font-bold text-center mb-2"
+              className="text-4xl mt-2 font-bold text-center mb-2"
             >
               SOCC
             </motion.h1>
