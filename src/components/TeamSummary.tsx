@@ -7,29 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-const teamMembers = [
-  {
-    name: "Alex Johnson",
-    role: "Founder & Lead Instructor",
-    image: "/placeholder.svg?height=120&width=120",
-  },
-  {
-    name: "Sarah Lee",
-    role: "Algorithm Specialist",
-    image: "/placeholder.svg?height=120&width=120",
-  },
-  {
-    name: "Michael Chen",
-    role: "Competitive Programming Coach",
-    image: "/placeholder.svg?height=120&width=120",
-  },
-  {
-    name: "Emily Taylor",
-    role: "Community Manager",
-    image: "/placeholder.svg?height=120&width=120",
-  },
-];
+import { teamMembers } from "../constants";
 
 const TeamSummary = () => {
   const controls = useAnimation();
@@ -80,14 +58,16 @@ const TeamSummary = () => {
               <Card className="bg-black/40 backdrop-blur-sm border-0 relative group overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-blue-300/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <CardContent className="p-6 flex flex-col items-center text-center relative">
-                  <div className="mb-4 p-1 rounded-full bg-gradient-to-br from-blue-500 to-blue-300 group-hover:scale-110 transition-transform duration-500">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={120}
-                      height={120}
-                      className="rounded-full"
-                    />
+                  <div className="w-28 h-28 mb-4 p-1 rounded-full bg-gradient-to-br from-blue-500 to-blue-300 group-hover:scale-110 transition-transform duration-500">
+                    <div className="relative w-full h-full rounded-full overflow-hidden">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={112}
+                        height={112}
+                        className="rounded-full object-cover w-full h-full"
+                      />
+                    </div>
                   </div>
                   <h3 className="text-xl font-bold mb-1 font-mono text-white group-hover:text-blue-300 transition-colors duration-300">
                     {member.name}
