@@ -8,6 +8,10 @@
 
 # testing
 /coverage
+# Firebase
+.firebase/
+firebase.json
+.firebaserc
 
 # next.js
 /.next/
