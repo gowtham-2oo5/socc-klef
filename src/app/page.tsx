@@ -12,9 +12,19 @@ export default function Home() {
   const [animationDone, setAnimationDone] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    // Check sessionStorage for the animation flag
+    const hasSeenAnimation = sessionStorage.getItem("hasSeenAnimation");
+
+    if (hasSeenAnimation) {
+      // Skip the animation if it has already been shown
       setAnimationDone(true);
-    }, 6000); // Matching timeout with the animation duration
+    } else {
+      // Mark the animation as seen after it plays
+      setTimeout(() => {
+        setAnimationDone(true);
+        sessionStorage.setItem("hasSeenAnimation", "true");
+      }, 6000); // Match the timeout with animation duration
+    }
   }, []);
 
   return (

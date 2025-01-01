@@ -74,7 +74,7 @@ export default function OpeningAnimation() {
               className="bg-gray-800 p-4 rounded-lg shadow-md"
             >
               <Image
-                src="/SOCC-LOGO.jpg"
+                src="/SOCC-LOGO.png"
                 width={150}
                 height={150}
                 alt="SOCC Logo"

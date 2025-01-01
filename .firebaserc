@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "socc-klef",
+    "dev": "socc-klef"
+  },
+  "targets": {},
+  "etags": {}
+}

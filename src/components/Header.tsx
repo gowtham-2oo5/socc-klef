@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 const Header = () => {
@@ -59,23 +59,20 @@ const Header = () => {
     >
       <div className="container px-4 py-4 grid grid-cols-3 items-center">
         {/* Logo */}
-        <Link href="/" className="col-start-1">
+        <Link href="/" className="col-start-1 animate-float">
           <Image
-            src="/SOCC-LOGO.jpg"
+            src="/SOCC-LOGO.png"
             alt="SOCC Logo"
             width={50}
             height={50}
-            className="mr-2"
+            className="mr-2 transition-transform hover:scale-110 duration-300"
           />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center justify-center space-x-6 col-start-2 col-span-1">
           {navItems.map((item) => (
-            <NavLink
-              key={item}
-              href={item === "IDE" ? "/ide" : `#${item.toLowerCase()}`}
-            >
+            <NavLink key={item} href={`/${item.toLowerCase()}`}>
               {item}
             </NavLink>
           ))}
@@ -98,10 +95,14 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden transition-colors hover:bg-primary/20"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
+            {isMobileMenuOpen ? (
+              <X className="text-primary" />
+            ) : (
+              <Menu className="text-primary" />
+            )}
           </Button>
         </div>
       </div>
@@ -118,12 +119,21 @@ const Header = () => {
           >
             <div className="container px-4 py-4 flex flex-col space-y-4 bg-background/95 backdrop-blur-sm">
               {navItems.map((item) => (
-                <NavLink
+                <motion.div
                   key={item}
-                  href={item === "IDE" ? "/ide" : `#${item.toLowerCase()}`}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  {item}
-                </NavLink>
+                  <NavLink
+                    href={item === "IDE" ? "/ide" : `#${item.toLowerCase()}`}
+                  >
+                    <span className="flex items-center">
+                      <ChevronRight className="mr-2 h-4 w-4 text-primary" />
+                      {item}
+                    </span>
+                  </NavLink>
+                </motion.div>
               ))}
               <Button
                 variant="outline"

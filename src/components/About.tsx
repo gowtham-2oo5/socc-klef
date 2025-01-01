@@ -28,8 +28,8 @@ const About = () => {
         "Level up your skills through intense coding battles and algorithmic challenges",
       icon: Code2,
       stats: "45+ Competitions",
-      gradient: "from-[#1a44ff] via-[#4169ff] to-[#638dff]",
-      shadow: "group-hover:shadow-[0_0_30px_-5px_rgba(26,68,255,0.3)]",
+      gradient: "from-primary via-primary/80 to-primary/60",
+      shadow: "group-hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)]",
     },
     {
       title: "Skill Development",
@@ -37,8 +37,8 @@ const About = () => {
         "Master advanced algorithms and ace technical interviews with structured learning",
       icon: Brain,
       stats: "100+ Problems",
-      gradient: "from-[#ff1a8c] via-[#ff4169] to-[#ff638d]",
-      shadow: "group-hover:shadow-[0_0_30px_-5px_rgba(255,26,140,0.3)]",
+      gradient: "from-secondary via-secondary/80 to-secondary/60",
+      shadow: "group-hover:shadow-[0_0_30px_-5px_hsl(var(--secondary)/0.3)]",
     },
     {
       title: "Community",
@@ -46,30 +46,28 @@ const About = () => {
         "Join a thriving community of coders, mentors, and future tech leaders",
       icon: Users,
       stats: "500+ Members",
-      gradient: "from-[#ffb01a] via-[#ffc041] to-[#ffd063]",
-      shadow: "group-hover:shadow-[0_0_30px_-5px_rgba(255,176,26,0.3)]",
+      gradient: "from-accent via-accent/80 to-accent/60",
+      shadow: "group-hover:shadow-[0_0_30px_-5px_hsl(var(--accent)/0.3)]",
     },
   ];
 
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen py-20 overflow-hidden bg-[#030712]"
+      className="relative min-h-screen py-20 overflow-hidden bg-background"
     >
-      {/* Cyber Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      <div className="absolute inset-0 bg-grid-small-primary/5 dark:bg-grid-small-primary/10" />
 
       <motion.div
         style={{ y, opacity }}
         className="container relative z-10 mx-auto px-4"
       >
-        {/* Glowing Header */}
         <div className="relative flex flex-col items-center mb-20">
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="absolute -top-32 w-96 h-96 bg-blue-500/10 rounded-full blur-[128px]"
+            className="absolute -top-32 w-96 h-96 bg-primary/10 dark:bg-primary/20 rounded-full blur-[128px]"
           />
           <div className="relative">
             <motion.div
@@ -78,12 +76,12 @@ const About = () => {
               transition={{ delay: 0.2 }}
               className="flex items-center gap-2 justify-center mb-4"
             >
-              <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-blue-500" />
-              <span className="text-blue-500 font-mono text-sm">DISCOVER</span>
-              <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-blue-500" />
+              <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-primary" />
+              <span className="text-primary font-mono text-sm">DISCOVER</span>
+              <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-primary" />
             </motion.div>
-            <h2 className="text-5xl md:text-7xl font-bold text-center mb-6 font-mono">
-              <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-300">
+            <h2 className="text-5xl md:text-7xl font-bold text-center mb-6 font-display">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
                 What is SOCC?
               </span>
             </h2>
@@ -95,14 +93,13 @@ const About = () => {
             >
               <Terminal className="w-4 h-4" />
               <code className="font-mono text-sm">
-                School of Competetive Coding
+                School of Competitive Coding
               </code>
               <Sparkles className="w-4 h-4" />
             </motion.div>
           </div>
         </div>
 
-        {/* Cards Grid */}
         <motion.div
           ref={ref}
           initial="hidden"
@@ -125,32 +122,27 @@ const About = () => {
               }}
               className="group relative"
             >
-              {/* Animated border gradient */}
               <div className="absolute -inset-[1px] rounded-xl bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm group-hover:blur-md" />
 
               <Card
-                className={`relative h-full border-0 bg-black/40 backdrop-blur-sm transition-all duration-500 ${card.shadow}`}
+                className={`relative h-full border-0 bg-card/40 backdrop-blur-sm transition-all duration-500 ${card.shadow}`}
               >
-                {/* Gradient overlay */}
                 <div
-                  className={`absolute inset-0 rounded-xl bg-gradient-to-br ${card.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                  className={`absolute inset-0 rounded-xl bg-gradient-to-br ${card.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                 />
 
-                {/* Content */}
                 <div className="relative p-6 flex flex-col h-full">
-                  {/* Icon with glow effect */}
                   <div className="mb-6 w-fit">
                     <div
                       className={`p-3 rounded-xl bg-gradient-to-br ${card.gradient} group-hover:scale-110 transition-transform duration-500`}
                     >
-                      <card.icon className="w-6 h-6 text-black" />
+                      <card.icon className="w-6 h-6 text-primary-foreground" />
                     </div>
                   </div>
 
-                  {/* Text Content */}
-                  <h3 className="text-2xl font-bold mb-3 font-mono transition-all duration-500 ease-out">
+                  <h3 className="text-2xl font-bold mb-3 font-display transition-all duration-500 ease-out">
                     <span
-                      className={`bg-gradient-to-r ${card.gradient} bg-clip-text text-transparent group-hover:opacity-100 group-hover:text-transparent transition-opacity duration-500`}
+                      className={`bg-gradient-to-r ${card.gradient} bg-clip-text text-transparent group-hover:opacity-100 transition-opacity duration-500`}
                     >
                       {card.title}
                     </span>
@@ -160,9 +152,8 @@ const About = () => {
                     {card.description}
                   </p>
 
-                  {/* Stats & CTA */}
-                  <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                    <span className="text-sm font-mono opacity-60">
+                  <div className="flex items-center justify-between pt-4 border-t border-primary/10">
+                    <span className="text-sm font-mono text-muted-foreground">
                       {card.stats}
                     </span>
                   </div>
