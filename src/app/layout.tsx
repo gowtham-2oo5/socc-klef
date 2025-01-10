@@ -32,7 +32,8 @@ export default function RootLayout({
           <CustomCursor />
           <div className="flex flex-col min-h-screen bg-background text-foreground">
             <Header />
-            <main className="flex-grow">{children}</main>
+            {/* Add padding-top equal to the height of the header */}
+            <main className="flex-grow pt-[var(--header-height)]">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
