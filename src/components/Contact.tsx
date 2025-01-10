@@ -35,14 +35,13 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 bg-[#030712] relative overflow-hidden"
+      className="py-20 bg-background relative overflow-hidden"
     >
-      {/* Cyber Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
+      <div className="absolute inset-0 bg-grid-small-primary opacity-10" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-5xl md:text-7xl font-bold mb-12 text-center font-mono">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-300">
+        <h2 className="text-5xl md:text-7xl font-bold mb-12 text-center font-display">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
             Get in Touch
           </span>
         </h2>
@@ -54,22 +53,22 @@ const Contact = () => {
             className="space-y-8"
           >
             <div className="flex items-center space-x-4">
-              <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500 to-blue-300">
-                <MapPin className="text-black w-6 h-6" />
+              <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-secondary">
+                <MapPin className="text-primary-foreground w-6 h-6" />
               </div>
               <p className="text-muted-foreground">
                 123 Coding Street, Tech City, 12345
               </p>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500 to-blue-300">
-                <Phone className="text-black w-6 h-6" />
+              <div className="p-3 rounded-xl bg-gradient-to-br from-secondary to-accent">
+                <Phone className="text-primary-foreground w-6 h-6" />
               </div>
               <p className="text-muted-foreground">+1 (555) 123-4567</p>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500 to-blue-300">
-                <Mail className="text-black w-6 h-6" />
+              <div className="p-3 rounded-xl bg-gradient-to-br from-accent to-primary">
+                <Mail className="text-primary-foreground w-6 h-6" />
               </div>
               <p className="text-muted-foreground">info@soccclub.com</p>
             </div>
@@ -88,7 +87,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full bg-black/40 backdrop-blur-sm border-blue-500/20 focus:border-blue-500"
+              className="w-full bg-card/40 backdrop-blur-sm border-primary/20 focus:border-primary"
             />
             <Input
               type="email"
@@ -97,7 +96,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full bg-black/40 backdrop-blur-sm border-blue-500/20 focus:border-blue-500"
+              className="w-full bg-card/40 backdrop-blur-sm border-primary/20 focus:border-primary"
             />
             <Textarea
               name="message"
@@ -105,12 +104,12 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full bg-black/40 backdrop-blur-sm border-blue-500/20 focus:border-blue-500"
+              className="w-full bg-card/40 backdrop-blur-sm border-primary/20 focus:border-primary"
               rows={4}
             />
             <Button
               type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white transition-colors duration-300"
+              className="w-full bg-primary hover:bg-primary/80 text-primary-foreground transition-colors duration-300"
             >
               Send Message
             </Button>
